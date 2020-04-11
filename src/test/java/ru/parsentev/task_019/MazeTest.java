@@ -23,7 +23,7 @@ public class MazeTest {
     @Test
     public void singleSolution() {
         Maze maze = new Maze(
-                new int[][] {
+                new int[][]{
                         {1, 0, 0},
                         {1, 1, 1},
                         {0, 0, 1}
@@ -36,7 +36,7 @@ public class MazeTest {
                                 new Point(0, 0),
                                 new Point(1, 0),
                                 new Point(1, 1),
-                                new Point(2, 1),
+                                new Point(1, 2),
                                 new Point(2, 2)
                         )
                 )
@@ -46,7 +46,7 @@ public class MazeTest {
     @Test
     public void multiSolutions() {
         Maze maze = new Maze(
-                new int[][] {
+                new int[][]{
                         {1, 1, 1, 0, 1, 1, 1},
                         {1, 0, 1, 0, 1, 0, 1},
                         {1, 0, 1, 0, 1, 0, 1},
@@ -55,22 +55,22 @@ public class MazeTest {
                         {1, 1, 1, 1, 1, 1, 1}
                 }
         );
-        List<Point> result = maze.solution(new Point(0, 0), new Point(6, 5));
+        List<Point> result = maze.solution(new Point(0, 0), new Point(5, 6));
         assertThat(
                 result, is(
                         asList(
                                 new Point(0, 0),
-                                new Point(0, 1),
-                                new Point(0, 2),
-                                new Point(0, 3),
-                                new Point(0, 4),
-                                new Point(0, 5),
-                                new Point(1, 5),
-                                new Point(2, 5),
-                                new Point(3, 5),
-                                new Point(4, 5),
+                                new Point(1, 0),
+                                new Point(2, 0),
+                                new Point(3, 0),
+                                new Point(4, 0),
+                                new Point(5, 0),
+                                new Point(5, 1),
+                                new Point(5, 2),
+                                new Point(5, 3),
+                                new Point(5, 4),
                                 new Point(5, 5),
-                                new Point(6, 5)
+                                new Point(5, 6)
                         )
                 )
         );

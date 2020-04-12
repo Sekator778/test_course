@@ -174,4 +174,4 @@
     Задача начальная и конечная точка. Робот может ходить вверх, вних, влево и вправо.
     Необходимо найти минимальный путь до конечной точки.
     
-    int minWay(int[][] board, int sx, int sy, int fx, int fy)
+    int minWay(int[][] board, int sx, int sy, int fx, int fy)# test_course

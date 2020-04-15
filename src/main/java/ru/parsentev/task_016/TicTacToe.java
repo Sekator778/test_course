@@ -14,7 +14,7 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @since 28.07.2016
  */
 public class TicTacToe {
-    private static final Logger log = getLogger(TicTacToe.class);
+    private static final Logger LOGGER = getLogger(TicTacToe.class);
 
     private final int[][] values;
 
@@ -27,7 +27,7 @@ public class TicTacToe {
         int count = 0;
 
         // gorizontal
-        for (int x[] : values) {
+        for (int[] x : values) {
             for (int k : x
             ) {
                 if (k == 1) {
@@ -56,7 +56,7 @@ public class TicTacToe {
                 k++;
                 count++;
             }
-           if(count == 3) {
+           if (count == 3) {
                rsl = true;
            }
         }

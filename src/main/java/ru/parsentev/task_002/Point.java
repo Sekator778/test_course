@@ -6,14 +6,15 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * Class Point defines a point in coordination system (x, y).
+ *
  * @author parsentev
  * @since 19.07.2016
  */
 public class Point {
     private static final Logger LOGGER = getLogger(Point.class);
 
-    private  int x;
-    private  int y;
+    private int x;
+    private int y;
 
     public Point(final int x, final int y) {
         this.x = x;
@@ -43,17 +44,23 @@ public class Point {
 
     @Override
     public String toString() {
-        return "x= " + x + ", y= " + y ;
+        return "x= " + x + ", y= " + y;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Point point = (Point) o;
 
-        if (x != point.x) return false;
+        if (x != point.x) {
+            return false;
+        }
         return y == point.y;
     }
 
@@ -65,6 +72,6 @@ public class Point {
     }
 
     public double distanceTo(final Point point) {
-       return Math.sqrt(Math.pow((this.x - point.getX()), 2) + Math.pow((this.y - point.getY()), 2));
+        return Math.sqrt(Math.pow((this.x - point.getX()), 2) + Math.pow((this.y - point.getY()), 2));
     }
 }

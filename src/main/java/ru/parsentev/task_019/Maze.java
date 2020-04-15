@@ -10,12 +10,7 @@ import java.util.List;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
+
 public class Maze {
 
     private final int[][] values;
@@ -73,9 +68,7 @@ public class Maze {
             }
 
             result.remove(result.size() - 1);
-            {
-                return false;
-            }
+            return false;
         }
         return false;
     }

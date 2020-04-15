@@ -8,12 +8,6 @@ import ru.parsentev.task_003.Triangle;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 @Ignore
 public class IsoscelesTriangleTest {
 

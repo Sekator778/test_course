@@ -6,14 +6,8 @@ import ru.parsentev.task_002.Point;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 public class Triangle {
-    private static final Logger log = getLogger(Triangle.class);
+    private static final Logger LOGGER = getLogger(Triangle.class);
 
     protected final Point first;
     protected final Point second;
@@ -26,19 +20,21 @@ public class Triangle {
     }
 
     public boolean exists() {
+        boolean rsl = false;
         double a = first.distanceTo(second);
         double b = first.distanceTo(third);
         double c = second.distanceTo(third);
 
         if (a + b > c && a + c > b && b + c > a) {
-            return true;
-        } else {
-            return false;
+            rsl = true;
         }
+            return rsl;
     }
 
     public double area() {
-        if (!exists()) throw new IllegalStateException();
+        if (!exists()) {
+            throw new IllegalStateException();
+        }
         double a = first.distanceTo(second);
         double b = first.distanceTo(third);
         double c = second.distanceTo(third);

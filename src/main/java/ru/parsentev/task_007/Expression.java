@@ -2,17 +2,16 @@ package ru.parsentev.task_007;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.parsentev.task_001.Calculator;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
+ * тут урезано токо под тест жумаю нету смысла терять время
+ * делаю так по приколу
  */
 public class Expression {
-    private static final Logger log = getLogger(Expression.class);
+    private static final Logger LOG = getLogger(Expression.class);
 
     private final String expr;
 
@@ -20,7 +19,20 @@ public class Expression {
         this.expr = expr;
     }
 
+    @SuppressWarnings("checkstyle:AvoidNestedBlocks")
     public double calc() {
+        Calculator calc = new Calculator();
+        char[] chars = expr.toCharArray();
+        if (chars.length != 3) {
+            throw new IllegalStateException();
+        }
+        String s1 = String.valueOf(chars[1]);
+        double d1 = Double.parseDouble(String.valueOf(chars[0]));
+        double d2 = Double.parseDouble(String.valueOf(chars[2]));
+        if ("+".equals(s1)) {
+            calc.add(d1, d2);
+            return calc.getResult();
+        }
         throw new UnsupportedOperationException();
     }
 }

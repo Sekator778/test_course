@@ -45,4 +45,14 @@ public class SquareTest {
         boolean result = new Square(first, second, third, fourth).exists();
         assertThat(result, is(false));
     }
+
+    @Test
+    public void notSquareWhenFourSideEqually() {
+        Point first = new Point(0, 0);
+        Point second = new Point(0, 2);
+        Point third = new Point(0, 4);
+        Point fourth = new Point(0, 6);
+        boolean result = new Square(first, second, third, fourth).exists();
+        assertThat(result, is(false));
+    }
 }

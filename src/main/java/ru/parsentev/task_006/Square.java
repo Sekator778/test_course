@@ -28,6 +28,10 @@ public class Square {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        double a = first.distanceTo(second);
+        double b = first.distanceTo(fourth);
+        double c = second.distanceTo(third);
+        double d = fourth.distanceTo(third);
+        return (a == b) && (a == c) && (a == d);
     }
 }

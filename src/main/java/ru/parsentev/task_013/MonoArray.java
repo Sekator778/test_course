@@ -5,14 +5,8 @@ import org.slf4j.LoggerFactory;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 public class MonoArray {
-    private static final Logger log = getLogger(MonoArray.class);
+    private static final Logger LOGGER = getLogger(MonoArray.class);
 
     private final int[] values;
 
@@ -21,6 +15,15 @@ public class MonoArray {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        boolean rsl = true;
+        int check = values[0];
+        for (int x : values
+             ) {
+            if (x != check) {
+                rsl = false;
+                break;
+            }
+        }
+        return rsl;
     }
 }

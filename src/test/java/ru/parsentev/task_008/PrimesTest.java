@@ -10,12 +10,6 @@ import static java.util.Arrays.asList;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.is;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 @Ignore
 public class PrimesTest {
     @Test
@@ -23,5 +17,12 @@ public class PrimesTest {
         Primes primes = new Primes(3);
         List<Integer> result = primes.calc();
         assertThat(result, is(asList(2, 3)));
+    }
+
+    @Test
+    public void calcTo5() {
+        Primes primes = new Primes(7);
+        List<Integer> result = primes.calc();
+        assertThat(result, is(asList(2, 3, 5, 7)));
     }
 }

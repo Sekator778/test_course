@@ -34,7 +34,7 @@ public class Maze {
             System.out.print("Solution doesn't exist");
             return new ArrayList<>();
         }
-            return result;
+        return result;
     }
 
     /**
@@ -62,16 +62,20 @@ public class Maze {
 
             // move forward in to Y
             Point moveY = new Point(current.getX(), current.getY() + 1);
-            if (solveMazeUtil(moveY, end, result))
+            if (solveMazeUtil(moveY, end, result)) {
                 return true;
+            }
 
             // move forward in to X
             Point moveX = new Point(current.getX() + 1, current.getY());
-            if (solveMazeUtil(moveX, end, result))
+            if (solveMazeUtil(moveX, end, result)) {
                 return true;
+            }
 
             result.remove(result.size() - 1);
-            return false;
+            {
+                return false;
+            }
         }
         return false;
     }

@@ -26,10 +26,25 @@ public class Triangle {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        double a = first.distanceTo(second);
+        double b = first.distanceTo(third);
+        double c = second.distanceTo(third);
+
+        if (a + b > c && a + c > b && b + c > a) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public double area() {
-        throw new UnsupportedOperationException();
+        if (!exists()) throw new IllegalStateException();
+        double a = first.distanceTo(second);
+        double b = first.distanceTo(third);
+        double c = second.distanceTo(third);
+
+        double p = (a + b + c) / 2;
+
+        return Math.round(Math.sqrt(p * (p - a) * (p - b) * (p - c)));
     }
 }

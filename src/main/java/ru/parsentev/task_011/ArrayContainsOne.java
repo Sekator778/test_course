@@ -4,14 +4,8 @@ import org.slf4j.Logger;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 public class ArrayContainsOne {
-    private static final Logger log = getLogger(ArrayContainsOne.class);
+    private static final Logger LOG = getLogger(ArrayContainsOne.class);
     private final int[] values;
 
     public ArrayContainsOne(final int[] values) {
@@ -19,6 +13,13 @@ public class ArrayContainsOne {
     }
 
     public boolean containsOnlyOne() {
-        throw new UnsupportedOperationException();
+        boolean rsl = true;
+        for (int x : values
+             ) {
+            if (x != 1) {
+                rsl = false;
+            }
+        }
+        return rsl;
     }
 }

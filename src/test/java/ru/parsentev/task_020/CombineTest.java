@@ -10,12 +10,6 @@ import static java.util.Arrays.asList;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 @Ignore
 public class CombineTest {
     @Test
@@ -38,8 +32,10 @@ public class CombineTest {
         assertThat(result, is(
                         asList(
                                 asList(1, 2, 3),
-                                asList(1, 3, 2),
                                 asList(2, 1, 3),
+                                asList(3, 1, 2),
+                                asList(1, 3, 2),
+                                asList(2, 3, 1),
                                 asList(3, 2, 1)
                         )
                 )

@@ -6,14 +6,8 @@ import ru.parsentev.task_003.Triangle;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 public class IsoscelesTriangle extends Triangle {
-    private static final Logger log = getLogger(IsoscelesTriangle.class);
+    private static final Logger LOG = getLogger(IsoscelesTriangle.class);
 
     public IsoscelesTriangle(Point first, Point second, Point third) {
         super(first, second, third);
@@ -21,6 +15,10 @@ public class IsoscelesTriangle extends Triangle {
 
     @Override
     public boolean exists() {
-       return super.exists();
+        double a = first.distanceTo(second);
+        double b = first.distanceTo(third);
+        double c = second.distanceTo(third);
+        boolean isExist = super.exists();
+        return (a == b) || (b == c) || (a == c) && isExist;
     }
 }

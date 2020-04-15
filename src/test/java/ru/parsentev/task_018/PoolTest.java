@@ -2,17 +2,10 @@ package ru.parsentev.task_018;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import ru.parsentev.task_015.CycleShift;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 @Ignore
 public class PoolTest {
     @Test
@@ -39,5 +32,32 @@ public class PoolTest {
         );
         int result = pool.maxUnion();
         assertThat(result, is(9));
+    }
+
+    @Test
+    public void oneDoubleArray() {
+        Pool pool = new Pool(
+                new int[][] {
+                        {1, 1, 1, 0},
+                        {1, 1, 0, 0},
+                        {0, 1, 1, 0},
+                        {1, 1, 1, 0}
+                }
+        );
+        int result = pool.maxUnion();
+        assertThat(result, is(10));
+    }
+    @Test
+    public void oneSomeDoubleArray() {
+        Pool pool = new Pool(
+                new int[][] {
+                        {0, 1, 1, 1},
+                        {0, 1, 0, 0},
+                        {0, 1, 1, 1},
+                        {0, 1, 0, 0}
+                }
+        );
+        int result = pool.maxUnion();
+        assertThat(result, is(8));
     }
 }

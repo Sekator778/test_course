@@ -10,13 +10,21 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @since 19.07.2016
  */
 public class Point {
-    private static final Logger log = getLogger(Point.class);
+    private static final Logger LOGGER = getLogger(Point.class);
 
     private  int x;
     private  int y;
 
     public Point(final int x, final int y) {
         this.x = x;
+        this.y = y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
         this.y = y;
     }
 
@@ -57,6 +65,6 @@ public class Point {
     }
 
     public double distanceTo(final Point point) {
-        throw new UnsupportedOperationException();
+       return Math.sqrt(Math.pow((this.x - point.getX()), 2) + Math.pow((this.y - point.getY()), 2));
     }
 }

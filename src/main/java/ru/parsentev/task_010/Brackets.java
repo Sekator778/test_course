@@ -4,14 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static org.slf4j.LoggerFactory.getLogger;
 
-/**
- * TODO: comment
- *
- * @author parsentev
- * @since 28.07.2016
- */
 public class Brackets {
-    private static final Logger log = getLogger(Brackets.class);
+    private static final Logger LOG = getLogger(Brackets.class);
     private final String line;
 
     public Brackets(final String line) {
@@ -19,6 +13,17 @@ public class Brackets {
     }
 
     public boolean isCorrect() {
-        throw new UnsupportedOperationException();
+        int count1 = 0;
+        int count2 = 0;
+        char[] input = line.toCharArray();
+        for (Character ch : input
+             ) {
+            if (String.valueOf(ch).equals("(")) {
+                count1++;
+            } else if (String.valueOf(ch).equals(")")) {
+                count2++;
+            }
+        }
+        return count1 == count2;
     }
 }

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Sekator778/test_course.svg?branch=master)](https://travis-ci.org/Sekator778/test_course)
+[![codecov](https://codecov.io/gh/Sekator778/test_course/branch/master/graph/badge.svg)](https://codecov.io/gh/Sekator778/test_course)
 # Курс тест по Java
 
 Цель курса

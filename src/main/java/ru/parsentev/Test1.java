@@ -1,8 +1,5 @@
 package ru.parsentev;
 
-import org.slf4j.Logger;
-import ru.parsentev.task_015.CycleShift;
-
 import java.util.Arrays;
 
 import static org.slf4j.LoggerFactory.getLogger;
